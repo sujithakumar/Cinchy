@@ -1,0 +1,45 @@
+<div id="wrapper" [ngClass]="ref.click === true? 'toggled' :''">
+  <div class="overlay" [ngStyle]="{disply:ref.click === true? 'block' :'none'}"></div>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+    <ul class="nav sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          Cinchy
+        </a>
+      </li>
+      <li>
+        <a routerLink="/" tabindex="1">Client Details</a>
+      </li>
+      <li>
+        <a routerLink="/appointment" tabindex="2">Appointment Details</a>
+      </li>
+      <li>
+        <a routerLink="/review" tabindex="3">Review and Submit</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <button appSidebar #ref="appSidebar" type="button" class="hamburger is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<div class="footer">
+  copy rights reserved by <b>Sujitha</b>
+</div>

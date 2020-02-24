@@ -1,0 +1,111 @@
+<h2>Client Details</h2>
+<div class="container">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit();">
+        <div class="row">
+            <div class="form-group col-md-2">
+                <label>Client<span class="req">*</span></label>
+                <select formControlName="client" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.client.errors }" (change)="onChangeClient($event)">
+                    <option *ngFor="let client of clients" [ngValue]="client">
+                        {{client.id || 0}}
+                    </option>
+                </select>
+                <div *ngIf="submitted && f.client.errors" class="alert alert-danger">
+                    <div *ngIf="f.client.errors.required">client is required</div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-5">
+                <label>First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" [(ngModel)]="firstName"
+                    [readonly]="true" />
+            </div>
+            <div class="form-group col-md-5">
+                <label>Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control" [(ngModel)]="lastName"
+                    [readonly]="true" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Birthday</label>
+                <input type="text" formControlName="birthday" class="form-control" [(ngModel)]="birthday"
+                    [readonly]="true" />
+            </div>
+            <!-- <div class="form-group col-md-6">
+                <label>e-mail</label>
+                <input type="email" formControlName="email" class="form-control" />
+            </div> -->
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Company Name</label>
+                <input type="text" formControlName="companyName" class="form-control" [(ngModel)]="companyName"
+                    [readonly]="true" />
+            </div>
+            <div class="form-group col-md-6">
+                <label>Position</label>
+                <input type="text" formControlName="position" class="form-control" [(ngModel)]="position"
+                    [readonly]="true" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Annual Salary</label>
+                <input type="text" formControlName="annualSalary" class="form-control" [(ngModel)]="annualSalary"
+                    [readonly]="true" />
+            </div>
+            <div class="form-group col-md-6">
+                <label>Description</label>
+                <textarea type="text" formControlName="description" class="form-control"
+                    [(ngModel)]="description"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Hobby<span class="req">*</span></label>
+                <input type="text" formControlName="hobby" class="form-control"
+                    placeholder="ex:Reading,singing,dancing.." class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.hobby.errors }" />
+                <div *ngIf="submitted && f.hobby.errors" class="alert alert-danger">
+                    <div *ngIf="f.hobby.errors.required">Hobby is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Date<span class="req">*</span></label>
+                <input type="date" formControlName="datefield" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.datefield.errors }" />
+                <div *ngIf="submitted && f.datefield.errors" class="alert alert-danger">
+                    <div *ngIf="f.datefield.errors.required">Date is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Favourite Colour </label>
+                <select formControlName="favColor" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.favColor.errors }" (change)="onChangeColor($event)">
+                    <option value=""></option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Purple">Purple</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Phone Number <span class="req">*</span></label>
+                <input type="tel" formControlName="phone" class="form-control" maxlength="10"
+                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                <div *ngIf="submitted && f.phone.errors" class="alert alert-danger">
+                    <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Next</button>
+        </div>
+    </form>
+</div>

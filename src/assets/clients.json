@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"firstName": "John",
+		"lastName": "Doe",
+		"companyName": "Cinchy",
+		"position": "Developer",
+		"description": "He is a great human being.",
+		"annualSalary": "72000",
+		"birthday": "Feb 02, 1990"
+	},
+	{
+		"id": 2,
+		"firstName": "Tony",
+		"lastName": "Stark",
+		"companyName": "Stark Industries",
+		"position": "CEO",
+		"description": "He is actually Iron Man, but everyone knows that already.",
+		"annualSalary": "12445000",
+		"birthday": "May 29, 1970"
+	},
+	{
+		"id": 3,
+		"firstName": "Oprah",
+		"lastName": "Winfrey",
+		"companyName": "The Oprah Winfrey Show",
+		"position": "Talk Show Host",
+		"description": "She's a very generous talk show host.",
+		"annualSalary": "210000",
+		"birthday": "Jan 29, 1954"
+	},
+	{
+		"id": null,
+		"firstName": "Phil",
+		"lastName": "McGraw",
+		"companyName": "Dr. Phil",
+		"position": "Talk Show Host",
+		"description": "He's a doctor that tries to solve people's issues on television.",
+		"annualSalary": "190000",
+		"birthday": "Feb 02, 1990"
+	},
+	{
+		"id": 5,
+		"firstName": "Alvin",
+		"lastName": "Ho",
+		"companyName": "Cinchy",
+		"position": "Platform Developer I",
+		"description": "He's a great guy I guess",
+		"annualSalary": "800000",
+		"birthday": "Jun 29, 1996"
+	},
+	{
+		"id": 6,
+		"firstName": "Jane",
+		"lastName": "Doe",
+		"companyName": "The Clothing Store",
+		"position": "Sales Associate",
+		"description": "Sells clothes and stuff",
+		"annualalary": "40000",
+		"birthday": "Jun 22, 1999"
+	},
+	{
+		"id": 7,
+		"firstName": "Will",
+		"lastName": "Smith",
+		"companyName": "Hollywood",
+		"position": "Actor",
+		"description": "",
+		"annualSalary": "1340000",
+		"birthday": "Sep 25, 1968"
+	}
+]

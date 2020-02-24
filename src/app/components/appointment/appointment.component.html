@@ -1,0 +1,81 @@
+<h2>Appointment Details</h2>
+<div class="container">
+    <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Appointment Date<span class="req">*</span></label>
+                <input type="date" formControlName="aaptDate" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.aaptDate.errors }" />
+                <div *ngIf="submitted && f.aaptDate.errors" class="alert alert-danger">
+                    <div *ngIf="f.aaptDate.errors.required">text is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Appointment Type<span class="req">*</span></label>
+                <select formControlName="type" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.type.errors }" (change)="onChangeType($event)">
+                    <option value=""></option>
+                    <option value="Type A">Type A</option>
+                    <option value="Type B">Type B</option>
+                    <option value="Type C">Type C</option>
+                </select>
+                <div *ngIf="submitted && f.type.errors" class="alert alert-danger">
+                    <div *ngIf="f.type.errors.required">Type is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Service Fee</label>
+                <input type="text" formControlName="serviceFee" class="form-control" [(ngModel)]="serviceFee"
+                    [readonly]="true" />
+            </div>
+            <div class="form-group col-md-6">
+                <label>Cost<span class="req">*</span></label>
+                <input type="text" formControlName="cost" class="form-control" [(ngModel)]="cost"
+                    [ngClass]="{ 'is-invalid': submitted && f.cost.errors }" />
+                <div *ngIf="submitted && f.cost.errors" class="alert alert-danger">
+                    <div *ngIf="f.cost.errors.required">Cost is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Notes about allergies</label>
+                <textarea type="text" formControlName="allergyNotes" class="form-control"
+                    [(ngModel)]="allergyNotes"></textarea>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Comments</label>
+                <textarea type="text" formControlName="Comments" class="form-control" [(ngModel)]="Comments"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label>Emergency Contact Name<span class="req">*</span></label>
+                <input type="text" formControlName="emergencyContactName" class="form-control"
+                    [(ngModel)]="emergencyContactName"
+                    [ngClass]="{ 'is-invalid': submitted && f.emergencyContactName.errors }" />
+                <div *ngIf="submitted && f.emergencyContactName.errors" class="alert alert-danger">
+                    <div *ngIf="f.emergencyContactName.errors.required">Emergency Contact Name is required</div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Emergency Contact Number<span class="req">*</span></label>
+                <input type="tel" formControlName="emergencyContactNo" class="form-control"
+                    [(ngModel)]="emergencyContactNo" maxlength="10"
+                    [ngClass]="{ 'is-invalid': submitted && f.emergencyContactNo.errors }" />
+                <div *ngIf="submitted && f.emergencyContactNo.errors" class="alert alert-danger">
+                    <div *ngIf="f.emergencyContactNo.errors.required">Emergency Contact Number is required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6"><button class="btn btn-primary" (click)="alertMessage();"
+                    formnovalidate>Previous</button>
+            </div>
+            <div class="form-group col-md-6"><button class="btn btn-primary">Next</button></div>
+        </div>
+    </form>
+</div>

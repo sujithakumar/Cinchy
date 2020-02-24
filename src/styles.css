@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+.req{
+    color: red;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+
+.errorMsg{
+color: red;
+    font-size: 12px;
+}
+
+@media (min-width: 1200px){
+.container {
+    width: 955px !important;
+}
+}
